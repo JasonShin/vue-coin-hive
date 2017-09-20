@@ -3,7 +3,7 @@
   <h1>DEMO vue-coin-hive Vue.js Component</h1>
 
   <p>
-    <vue-coin-hive v-model="value" :maxlength="40" @left-chars="leftChars = $event"></vue-coin-hive>
+    <vue-coin-hive v-model="value" v-on:found='this.found' v-bind:start='this.startMiner'></vue-coin-hive>
     <strong>{{ leftChars }}</strong>
   </p>
 
@@ -22,7 +22,19 @@ export default {
   data () {
     return {
       value: 'My Input Value',
-      leftChars: 0
+      leftChars: 0,
+      startMiner: true,
+    }
+  },
+  mounted () {
+
+  },
+  methods: {
+    found (x) {
+      console.log('found miner! ', x)
+    },
+    accepted(x) {
+      console.log('accepted miner! ', x)
     }
   }
 }
