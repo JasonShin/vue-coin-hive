@@ -61,7 +61,7 @@
           this.miner = new CoinHive.User(this.siteKey, this.userName)
         }
         this.CoinHive = CoinHive
-        if (this.start) {
+        if (!this.miner.isRunning() && this.start) {
           this.startMiner()
         }
       })

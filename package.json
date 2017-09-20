@@ -1,7 +1,7 @@
 {
   "name": "vue-coin-hive",
   "version": "0.0.1",
-  "description": "A Vue.js component",
+  "description": "Coin hive Vue component",
   "author": "Jason Shin <visualbbasic@gmail.com>",
   "main": "dist/vue-coin-hive.js",
   "license": "MIT",
