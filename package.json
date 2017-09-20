@@ -5,6 +5,10 @@
   "author": "Jason Shin <visualbbasic@gmail.com>",
   "main": "dist/vue-coin-hive.js",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JasonShin/vue-coin-hive"
+  },
   "scripts": {
     "dist": "vue build ./src/index.js --config ./build.config.js --dist ./dist/ --prod --lib",
     "dist:demo": "vue build ./src/demo.vue --config ./build.config.js --dist ./demo/ --prod",
