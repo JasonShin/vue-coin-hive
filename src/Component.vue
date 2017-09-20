@@ -1,5 +1,4 @@
 <template lang="html">
-<textarea class="vue-coin-hive"></textarea>
 </template>
 
 <script>
