@@ -41,6 +41,10 @@
 - *v-bind:accepted* : return payload received from miner.on('accepted)
 - *v-bind:updatePerSecond* : return payload received from getHashesPerSecond, getTotalHashes, getAcceptedHashes
 
+## Roadmap
+
+- Mining indicator for users
+
 ## License
 
 This project is licensed under [MIT License](http://en.wikipedia.org/wiki/MIT_License)
