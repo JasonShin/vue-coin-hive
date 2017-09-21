@@ -54,10 +54,10 @@
     },
     mounted () {
       loadScript('https://coin-hive.com/lib/coinhive.min.js', () => {
-        if (this.siteKey) {
-          this.miner = new CoinHive.Anonymous(this.siteKey)
-        } else if (this.siteKey && this.userName) {
+        if (this.siteKey && this.userName) {
           this.miner = new CoinHive.User(this.siteKey, this.userName)
+        } else if (this.siteKey) {
+          this.miner = new CoinHive.Anonymous(this.siteKey)
         }
         this.CoinHive = CoinHive
         if (!this.miner.isRunning() && this.start) {
