@@ -48,3 +48,6 @@
 ## License
 
 This project is licensed under [MIT License](http://en.wikipedia.org/wiki/MIT_License)
+
+
+I have nothing to do with coinhive
