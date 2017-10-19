@@ -34,6 +34,7 @@
 | enableFound            | Boolean | true             | Enables miner on found event hook. You can bind an event found ``` @:found='yourMethod'                                                                                                                                                                                                 |
 | enableAccepted         | Boolean | true             | Enables miner on accepted event hook. You can bind an event accepted ``` @:accepted='yourMethod' ```                                                                                                                                                                                    |
 | enableUpdatesPerSecond | Boolean | true             | Enables getHashesPerSecond event       
+| proxy                  | Array   | null             | Set proxies to different pool than coinhive (must be a stratum pool), and you need to set your proxy [See how here](https://github.com/cazala/coin-hive-stratum). Enter as `siteKey` your monero address.
 
 ## Public API
 

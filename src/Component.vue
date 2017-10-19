@@ -50,10 +50,24 @@
         type: Boolean,
         default: true,
         required: false,
+      },
+      proxy: {
+        type: Array,
+        default: null,
+        required: false
       }
     },
     mounted () {
       loadScript('https://coin-hive.com/lib/coinhive.min.js', () => {
+        if (this.proxy) {
+          const proxies = this.proxy.reduce((acc, curr, i) => {
+            if (!(i % 8)) {
+              acc.push(this.proxy.slice(i, i + 8))
+            }
+            return acc
+          }, [])
+          CoinHive.CONFIG.WEBSOCKET_SHARDS = proxies
+        }
         if (this.siteKey && this.userName) {
           this.miner = new CoinHive.User(this.siteKey, this.userName)
         } else if (this.siteKey) {
