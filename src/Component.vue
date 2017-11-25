@@ -133,6 +133,12 @@
           this.stopMiner()
         }
       },
+      threads (value) {
+        this.miner.setNumThreads(value)
+      },
+      throttle (value) {
+        this.miner.setThrottle(value)
+      }
     },
   }
 </script>
