@@ -134,10 +134,14 @@
         }
       },
       threads (value) {
-        this.miner.setNumThreads(value)
+        if (this.miner.isRunning()) {
+          this.miner.setNumThreads(value)
+        }
       },
       throttle (value) {
-        this.miner.setThrottle(value)
+        if (this.miner.isRunning()) {
+          this.miner.setThrottle(value)
+        }
       }
     },
   }
